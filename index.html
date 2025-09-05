@@ -271,6 +271,8 @@
             transform: scale(0.8) translateY(50px);
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .popup-overlay.show .popup-content {
@@ -316,10 +318,12 @@
 
         .pdf-container {
             width: 100%;
-            height: calc(100% - 80px);
+            flex: 1;
             border: none;
             border-radius: 0 0 25px 25px;
             background: #1a1a1a;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .search-container {
@@ -444,11 +448,14 @@
                 width: 98vw;
                 height: 97vh;
                 border-radius: 15px;
+                max-height: 97vh;
+                overflow: hidden;
             }
 
             .popup-header {
                 padding: 15px 20px;
                 border-radius: 15px 15px 0 0;
+                flex-shrink: 0;
             }
 
             .popup-title {
@@ -457,6 +464,8 @@
 
             .pdf-container {
                 border-radius: 0 0 15px 15px;
+                overflow: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .repertorio-header {
@@ -498,15 +507,20 @@
                 width: 100vw;
                 height: 100vh;
                 border-radius: 0;
+                max-height: 100vh;
+                overflow: hidden;
             }
 
             .popup-header {
                 padding: 15px 20px;
                 border-radius: 0;
+                flex-shrink: 0;
             }
 
             .pdf-container {
                 border-radius: 0;
+                overflow: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .repertorio-header {
